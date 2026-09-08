@@ -5,5 +5,6 @@ const dashboardState = {
   category: [],
 
   selectedCategory: "",
+  
   theme: "light"
 };
