@@ -16,6 +16,7 @@ function addTask() {
 function deleteTask() {
 
 
+
 };
 
 function toggleTask() {
@@ -27,17 +28,25 @@ function toggleTask() {
 
 /*Render Functions*/
 function renderTasks() {
-  // displays the task list
+  const taskList = document.querySelector("#task_list");
+
+  taskList.innerHTML = "";
+
+  tasks.forEach(function(task) {
+    const li = document.createElement("li");
+    li.textContent = task.text;
+    taskList.appendChild(li);
+  });
 
 };
 
-function renderStats() {
-  // displays dashboard statistics
+function render() {
+
 
 };
 
 function renderEmptyMessage() {
-  // displays a message when there is no data
+
 
 };
 
@@ -46,13 +55,9 @@ function renderEmptyMessage() {
 
 /*Event Functions*/
 function handleTaskSubmit(event) {
-  // gets form input
-  // validates input
-  // calls addTask()
+
+
 };
 
-function handleThemeToggle() {
-  // changes theme state
-  // re-renders or updates the theme
-};
+
 
