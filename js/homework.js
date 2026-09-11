@@ -1,30 +1,11 @@
 /*App State*/
 const dashboardState = {
-  name: [],
-  category: [],
-  status: [],
+  name: ["complete homework"],
+  category: ["notes"],
+  status: ["incomplete"],
   selectedCategory: "all",
   
 };
-
-/*State Functions*/
-function addTask() {
-
-
-};
-
-function deleteTask() {
-
-
-
-};
-
-function toggleTask() {
-
-
-};
-
-
 
 /*Render Functions*/
 function renderTasks() {
@@ -40,24 +21,44 @@ function renderTasks() {
 
 };
 
-function render() {
-
+function renderCounter() {
 
 };
 
 function renderEmptyMessage() {
 
+};
+
+
+function render() {
+  renderTasks();
 
 };
 
 
 
+/*State Functions*/
+function addTask() {
+
+};
+
+function deleteTask() {
+
+};
+
+function toggleTask() {
+
+};
+
+function CounterFinder() {
+
+};
 
 /*Event Functions*/
 function handleTaskSubmit(event) {
 
-
 };
 
+function handleTaskDelete(event) {
 
-
+};
