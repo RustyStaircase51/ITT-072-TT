@@ -47,10 +47,11 @@ function renderCounter() {
   }
 
   else {
-    taskCounter.innerHTML = "<h2>"
+    taskCounter.innerHTML = "<h2>" + incompleteTasksNum + "</h2>"
 
-  }};
+  }
 };
+
 
 
 
