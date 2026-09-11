@@ -6,6 +6,19 @@ const dashboardState = {
   selectedCategory: "all",  
 };
 
+
+function CounterFinder() {
+  let incompleteTasksNum = 0
+
+  dashboardState.status.forEach(function(currentStatus){
+    if (currentStatus === "incomplete")
+      incompleteTasksNum += 1;
+    
+  });
+};
+
+
+
 /*Render Functions*/
 function renderTasks() {
   const taskList = document.querySelector("#task_list");
@@ -24,16 +37,6 @@ function renderTasks() {
   });
 };
 
-
-function CounterFinder() {
-  let incompleteTasksNum = 0
-
-  dashboardState.status.forEach(function(currentStatus){
-    if (currentStatus === "incomplete")
-      incompleteTasksNum += 1;
-    
-  });
-};
 
 
 function renderCounter() {
@@ -83,7 +86,7 @@ function render() {
 
 
 /*State Functions*/
-/*function addTask() {
+function addTask() {
 
 };
 
@@ -96,7 +99,7 @@ function toggleTask() {
 };
 
 
-*/
+
 /*Event Functions*/
 /*function handleTaskSubmit(event) {
 
