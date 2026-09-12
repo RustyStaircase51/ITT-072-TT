@@ -7,15 +7,54 @@ const dashboardState = {
 };
 
 
+
+
+
+
+/*State Functions*/
+
+
+
+function addTask(task, cat) {
+  const duplicateTask = dashboardState.tasks.some(function(task) {
+    return task.title.toLowerCase() === title.toLowerCase();
+  });
+
+  if (duplicateTask) {
+    showMessage("That task already exists.");
+    return;
+  }
+
+  dashboardState.tasks.push({
+    tasks: task,
+    category: cat,
+    completed: false
+  });
+
+  render();
+};
+
+function deleteTask() {
+
+};
+
+function toggleTask() {
+
+};
+
 function CounterFinder() {
   let incompleteTasksNum = 0
 
   dashboardState.status.forEach(function(currentStatus){
     if (currentStatus === "incomplete")
       incompleteTasksNum += 1;
-    
+  
+    return incompleteTasksNum;
   });
 };
+
+
+
 
 
 
@@ -50,12 +89,10 @@ function renderCounter() {
   }
 
   else {
-    taskCounter.innerHTML = "<h2>" + incompleteTasksNum + "</h2>"
+    taskCounter.innerHTML = "<h2>" + incompleteTasksNum + " tasks remaining</h2>"
 
   }
 };
-
-
 
 
 
@@ -69,40 +106,18 @@ function render() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*State Functions*/
-function addTask() {
-
-};
-
-function deleteTask() {
-
-};
-
-function toggleTask() {
-
-};
-
-
-
 /*Event Functions*/
-/*function handleTaskSubmit(event) {
+function handleFormCreation(){
+  const taskBtn = document.querySelector("#create_task");
+  taskBtn.addEventListener("click", function (e) {
+  });
 
+
+};
+/*function handleTaskSubmit(event) {
+  // gets form input
+  // validates input
+  // calls addTask()
 };
 
 function handleTaskDelete(event) {

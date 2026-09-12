@@ -17,6 +17,10 @@
 
 
 <main class="container">    
+    <!-- This will pop up a form that will have a slot to type name, dropdown to select category, and a button "Done" + a button "Cancel" -->
+    <button id = "create_task">Create Task</button>
+
+
     <!-- This will show the number of tasks (3 tasks remaining) if zero tasks will display "Add a homework assignment to get started"-->
     <section id = "task_counter">
 
@@ -24,7 +28,8 @@
     
     <!-- Category Sort by Assignment Type (Default will show all assignments) -->
     <select id= "category">
-		<option value = "all">All</option>
+	<p>Current Category:</p>
+        <option value = "all">All</option>
         <option value = "quiz">Quiz</option>
         <option value = "reading">Reading</option>
         <option value = "notes">Notes</option>
