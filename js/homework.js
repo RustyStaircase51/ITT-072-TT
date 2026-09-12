@@ -78,7 +78,18 @@ function renderTasks() {
   dashboardState.tasks.forEach(function(task) {
     const li = document.createElement("li");
     li.textContent = task.title;
+   
+    const del_btn = document.createElement("button");
+    btn.classList.add('delete_button');
+    btn.textContent = "Delete";
+
+    const com_btn = document.createElement("button");
+    btn.classList.add('complete_button');
+    btn.textContent = "Complete";
+    
     taskList.appendChild(li);
+    taskList.appendChild(com_btn);
+    taskList.appendChild(del_btn);
   });
 };
 
