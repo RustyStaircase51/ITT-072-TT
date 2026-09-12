@@ -17,9 +17,39 @@
 
 
 <main class="container">    
-    <!-- This will pop up a form that will have a slot to type name, dropdown to select category, and a button "Done" + a button "Cancel" -->
-    <button id = "create_task">Create Task</button>
+    
+    
+    <section id="form">
+		<h2>Add a Task</h2>
+		<form novalidate id="taskForm">
+			<label>
+				Task:
+				<input id="taskAdd" type="text" placeholder="Finish Module 4" required />
+			</label>
 
+			<br>
+
+			<label>
+                Category:
+				<select id="categoryAdd" name="category">
+                    <option value = "quiz">Quiz</option>
+                    <option value = "reading">Reading</option>
+                    <option value = "notes">Notes</option>
+                    <option value = "assignment">Assignment</option>
+                </select>
+			</label>
+
+			<br>
+		
+			<button id="create_task" type="submit">Create Task</button>
+            
+
+        </form>
+	</section>
+	
+    <section id="errors">
+	    <p id="error_message"></p>
+	</section>
 
     <!-- This will show the number of tasks (3 tasks remaining) if zero tasks will display "Add a homework assignment to get started"-->
     <section id = "task_counter">
@@ -27,17 +57,18 @@
     </section>
     
     <!-- Category Sort by Assignment Type (Default will show all assignments) -->
-    <select id= "category">
-	<p>Current Category:</p>
-        <option value = "all">All</option>
-        <option value = "quiz">Quiz</option>
-        <option value = "reading">Reading</option>
-        <option value = "notes">Notes</option>
-        <option value = "assignment">Assignment</option>
-        <option value = "complete">Complete</option>
-        <option value = "incomplete">Incomplete</option>
-	</select>
-
+    <label>
+        Current Category:
+        <select id= "category">
+            <option value = "all">All</option>
+            <option value = "quiz">Quiz</option>
+            <option value = "reading">Reading</option>
+            <option value = "notes">Notes</option>
+            <option value = "assignment">Assignment</option>
+            <option value = "complete">Complete</option>
+            <option value = "incomplete">Incomplete</option>
+        </select>
+    </label>
     <!-- This will display all the tasks according to the category selected above -->
     <section id = "task_list">
 

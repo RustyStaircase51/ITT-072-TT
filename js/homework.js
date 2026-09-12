@@ -1,5 +1,6 @@
 /*App State*/
 const dashboardState = {
+  id: [],
   tasks: [],
   category: [],
   status: [],
@@ -26,6 +27,7 @@ function addTask(task, cat) {
   }
 
   dashboardState.tasks.push({
+    id: Date.now(),
     tasks: task,
     category: cat,
     completed: false
@@ -34,13 +36,17 @@ function addTask(task, cat) {
   render();
 };
 
+
+
 function deleteTask() {
 
 };
 
 function toggleTask() {
-
+  
 };
+
+
 
 function CounterFinder() {
   let incompleteTasksNum = 0
@@ -107,13 +113,6 @@ function render() {
 
 
 /*Event Functions*/
-function handleFormCreation(){
-  const taskBtn = document.querySelector("#create_task");
-  taskBtn.addEventListener("click", function (e) {
-  });
-
-
-};
 /*function handleTaskSubmit(event) {
   // gets form input
   // validates input
