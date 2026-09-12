@@ -39,6 +39,14 @@ function addTask(task, cat) {
 
 
 function deleteTask() {
+    
+  const fullTasks = dashboardState.id;
+
+  const index = fullTasks.indexOf();
+
+  if (index !== -1) {
+    tasks.splice(index, 1);
+  }
 
 };
 
