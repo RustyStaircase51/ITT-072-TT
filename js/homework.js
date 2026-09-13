@@ -30,28 +30,28 @@ function addTask(task, cat) {
     id: Date.now(),
     tasks: task,
     category: cat,
-    completed: false
+    status: false
   });
-
-  render();
 };
 
 
 
-function deleteTask() {
-    
-  const fullTasks = dashboardState.id;
-
-  const index = fullTasks.indexOf();
-
-  if (index !== -1) {
-    tasks.splice(index, 1);
-  }
-
-};
-
-function toggleTask() {
+function clearTasks() {
+  let id_array = dashboardState.id   
+  let tasks_array = dashboardState.tasks
+  let category_array = dashboardState.category
+  let status_array = dashboardState.status
   
+  id_array = [];
+  tasks_array = [];
+  category_array = [];
+  status_array = [];
+};
+
+
+
+function completeTask(task_name) {
+	task_name.status = true;
 };
 
 
@@ -86,15 +86,14 @@ function renderTasks() {
   dashboardState.tasks.forEach(function(task) {
     const li = document.createElement("li");
     li.textContent = task.title;
-   
-    const del_btn = document.createElement("button");
-    btn.classList.add('delete_button');
-    btn.textContent = "Delete";
 
     const com_btn = document.createElement("button");
     btn.classList.add('complete_button');
     btn.textContent = "Complete";
-    
+    com_btn.addEventListener("click", () => {
+		  handleTaskComplete(task);
+      });
+
     taskList.appendChild(li);
     taskList.appendChild(com_btn);
     taskList.appendChild(del_btn);
@@ -132,15 +131,24 @@ function render() {
 
 
 /*Event Functions*/
-/*function handleTaskSubmit(event) {
+function handleTaskSubmit(event) {
   // gets form input
   // validates input
   // calls addTask()
+
+
+  addTask();
 };
 
-function handleTaskDelete(event) {
-
+function handleClearTasks() {
+      com_btn.addEventListener("click", () => {
+		  handleTaskComplete(task);
+      });
+  clearTasks();
+  render();
 };
 
-render();
-*/
+function handleTaskComplete(event) {
+  completeTask(event);
+  render();
+};
