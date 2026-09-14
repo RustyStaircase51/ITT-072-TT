@@ -59,8 +59,11 @@ function deleteTask(task_name) {
 
 
 function completeTask(task_name) {
-	task_name.status = true;
+	let index_num = dashboardState.tasks.indexOf(task_name);
+  let splice_change = dashboardState.status.splice(index_num, 1, true);
 
+  console.log(index_num)
+  console.log(splice_change)
   console.log(dashboardState);
 };
 
@@ -104,21 +107,21 @@ function renderTasks() {
     com_btn.textContent = "Complete";
     com_btn.addEventListener("click", () => {
 		  handleTaskComplete(task);
-      element.remove("complete_button");
       });
 
 
       
     const del_btn = document.createElement("button");
     del_btn.classList.add('delete_button');
-    com_btn.textContent = "Delete";
-    com_btn.addEventListener("click", () => {
-		  handleTaskComplete(task);
+    del_btn.textContent = "Delete";
+    del_btn.addEventListener("click", () => {
+		  handleTaskDelete(task);
       });  
 
     
     taskList.appendChild(li);
-    taskList.appendChild(com_btn);
+    taskList.appendChild(com_btn)
+    taskList.appendChild(del_btn);
   });
 };
 
@@ -186,9 +189,6 @@ function handleTaskSubmit() {
   });
 };
 
-
-
-
 function handleClearTasks() {  
   const clr_btn = document.querySelector("#clear_button");
   clr_btn.addEventListener("click", () => {
@@ -198,10 +198,18 @@ function handleClearTasks() {
 };
 
 function handleTaskComplete(event) {
-  
   completeTask(event);
   render();
 };
+
+function handleTaskDelete(event) {  
+		deleteTask(event);
+    render();
+};
+
+
+
+
 
 
 
