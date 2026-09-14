@@ -70,7 +70,7 @@ function CounterFinder() {
   let incompleteTasksNum = 0
 
   dashboardState.status.forEach(function(currentStatus){
-    if (currentStatus === "incomplete")
+    if (currentStatus === false)
       incompleteTasksNum += 1;
   
   });
@@ -154,7 +154,7 @@ function render() {
 
 /*Event Functions*/
 function handleTaskSubmit() {
-  const form = document.querySelector("#createTask");
+  const form = document.querySelector("#taskForm");
     form.addEventListener("submit", (event) => {
     event.preventDefault();
     
@@ -165,7 +165,8 @@ function handleTaskSubmit() {
     const category = category_grabber.value;
 
     if (task === "") {
-      showMessage("That task needs a name.")
+      const error_mes = document.querySelector("#error_message") 
+      error_mes.innerHTML = ("That task needs a name.");
       return;
     }
 
@@ -174,11 +175,14 @@ function handleTaskSubmit() {
     });
 
     if (duplicateTask) {
-      showMessage("That task already exists.");
+      const error_mes = document.querySelector("#error_message") 
+      error_mes.innerHTML = ("That task already exists.");
       return;
     }
     
+    form.reset();
     addTask(task, category);
+    render();
   });
 };
 
