@@ -12,7 +12,7 @@ const dashboardState = {
 
 
 
-/*State Functions*/
+/*State Functions: changes data*/
 
 function addTask(task, cat) {
     dashboardState.id.push(Date.now()),
@@ -58,14 +58,17 @@ function deleteTask(task_name) {
 
 
 
-function completeTask(task_name) {
+function markTask(task_name) {
 	let index_num = dashboardState.tasks.indexOf(task_name);
-  let splice_change = dashboardState.status.splice(index_num, 1, true);
+  if (dashboardState.status.index_num === false) {
+  const splice_change_1 = dashboardState.status.splice(index_num, 1, true)
+  }
 
-  console.log(index_num)
   console.log(splice_change)
+  console.log(index_num)
   console.log(dashboardState);
 };
+
 
 
 
@@ -82,11 +85,31 @@ function CounterFinder() {
 };
 
 
+function CategoryChanger(category_name){
+  if (category_name === "all"){
+    dashboardState.selectedCategory = "all"
+  }
+  else if (category_name === "quiz"){
+    dashboardState.selectedCategory = "quiz"
+  }
+  else if (category_name === "reading"){
+    dashboardState.selectedCategory = "reading"
+  }
+  else if (category_name === "notes"){
+    dashboardState.selectedCategory = "notes"
+  }
+  else if (category_name === "assignment"){
+    dashboardState.selectedCategory = "assignment"
+  }
+};
 
 
 
 
-/*Render Functions*/
+
+
+
+/*Render Functions: update page*/
 function renderTasks() {
   const taskList = document.querySelector("#task_list");
 
@@ -97,32 +120,43 @@ function renderTasks() {
     return;
   }
 
-  dashboardState.tasks.forEach(function(task) {
-    const li = document.createElement("li");
-    li.textContent = task;
 
-    
-    const com_btn = document.createElement("button");
-    com_btn.classList.add('complete_button');
-    com_btn.textContent = "Complete";
-    com_btn.addEventListener("click", () => {
-		  handleTaskComplete(task);
-      });
-
-
+    dashboardState.tasks.forEach(function(task) {
+      let indexNumber = dashboardState.tasks.indexOf(task);
+      let taskCategory = dashboardState.category.indexNumber;
+      if (dashboardState.selectedCategory === "all" || dashboardState.selectedCategory === taskCategory) {
       
-    const del_btn = document.createElement("button");
-    del_btn.classList.add('delete_button');
-    del_btn.textContent = "Delete";
-    del_btn.addEventListener("click", () => {
-		  handleTaskDelete(task);
-      });  
+        const li = document.createElement("li");
+        li.textContent = task;
 
-    
-    taskList.appendChild(li);
-    taskList.appendChild(com_btn)
-    taskList.appendChild(del_btn);
-  });
+        
+        const com_btn = document.createElement("button");
+        com_btn.classList.add('complete_button');
+        com_btn.textContent = "Complete";
+        com_btn.addEventListener("click", () => {
+          handleTaskMark(task)
+          if (com_btn.textContent === "Complete") {
+            com_btn.textContent = "Undo";
+          }
+          else {
+            com_btn.textContent = "Complete";
+          };
+          });
+
+
+          
+        const del_btn = document.createElement("button");
+        del_btn.classList.add('delete_button');
+        del_btn.textContent = "Delete";
+        del_btn.addEventListener("click", () => {
+          handleTaskDelete(task);
+          });  
+
+        
+        taskList.appendChild(li);
+        taskList.appendChild(com_btn);
+        taskList.appendChild(del_btn);
+    } });
 };
 
 
@@ -155,7 +189,7 @@ function render() {
 
 
 
-/*Event Functions*/
+/*Event Functions: User Action*/
 function handleTaskSubmit() {
   const form = document.querySelector("#taskForm");
     form.addEventListener("submit", (event) => {
@@ -197,8 +231,9 @@ function handleClearTasks() {
     });
 };
 
-function handleTaskComplete(event) {
-  completeTask(event);
+function handleTaskMark(event) {
+  
+  markTask(event);
   render();
 };
 
@@ -207,6 +242,16 @@ function handleTaskDelete(event) {
     render();
 };
 
+
+function handleCategory(event) {
+  const category_button = document.querySelector("#category");
+  const new_category = category_button.value
+  category_button.addEventListener("change", () => {
+    CategoryChanger(new_category);
+    render();
+  });
+
+};
 
 
 
