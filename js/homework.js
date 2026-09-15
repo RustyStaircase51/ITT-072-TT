@@ -120,11 +120,10 @@ function renderTasks() {
     return;
   }
 
-
+handleCategory();
     dashboardState.tasks.forEach(function(task) {
       let indexNumber = dashboardState.tasks.indexOf(task);
       let taskCategory = dashboardState.category[indexNumber];
-      handleCategory();
       if (dashboardState.selectedCategory === "all" || dashboardState.selectedCategory === taskCategory) {
         
 
