@@ -14,6 +14,7 @@ const dashboardState = {
 
 /*State Functions: changes data*/
 
+//Works
 function addTask(task, cat) {
     dashboardState.id.push(Date.now()),
     dashboardState.tasks.push(task),
@@ -25,7 +26,7 @@ function addTask(task, cat) {
 };
 
 
-
+//Works
 function clearTasks() {
   dashboardState.id = [];
   dashboardState.tasks = [];
@@ -38,6 +39,7 @@ function clearTasks() {
   console.log(dashboardState);
 };
 
+//Works
 function deleteTask(task_name) {
 	let index_number = dashboardState.tasks.indexOf(task_name);
   let splice_element1 = dashboardState.id.splice(index_number, 1);
@@ -60,18 +62,16 @@ function deleteTask(task_name) {
 
 function markTask(task_name) {
 	let index_num = dashboardState.tasks.indexOf(task_name);
-  if (dashboardState.status.index_num === false) {
   const splice_change_1 = dashboardState.status.splice(index_num, 1, true)
-  }
-
-  console.log(splice_change)
+  
+  console.log(splice_change_1)
   console.log(index_num)
   console.log(dashboardState);
 };
 
 
 
-
+//Works
 function CounterFinder() {
   let incompleteTasksNum = 0
 
@@ -123,24 +123,23 @@ function renderTasks() {
 
     dashboardState.tasks.forEach(function(task) {
       let indexNumber = dashboardState.tasks.indexOf(task);
-      let taskCategory = dashboardState.category.indexNumber;
+      let taskCategory = dashboardState.category[indexNumber];
+      handleCategory();
       if (dashboardState.selectedCategory === "all" || dashboardState.selectedCategory === taskCategory) {
-      
+        
+
         const li = document.createElement("li");
         li.textContent = task;
-
         
+      if (dashboardState.status[indexNumber] === false){
+          li.style.color = "red";
+      }
+
         const com_btn = document.createElement("button");
         com_btn.classList.add('complete_button');
         com_btn.textContent = "Complete";
         com_btn.addEventListener("click", () => {
           handleTaskMark(task)
-          if (com_btn.textContent === "Complete") {
-            com_btn.textContent = "Undo";
-          }
-          else {
-            com_btn.textContent = "Complete";
-          };
           });
 
 
@@ -156,10 +155,12 @@ function renderTasks() {
         taskList.appendChild(li);
         taskList.appendChild(com_btn);
         taskList.appendChild(del_btn);
+        
     } });
 };
 
 
+//Works
 function renderCounter() {
   const taskCounter = document.querySelector("#task_counter");
   const incompleteTasksNum = CounterFinder();
@@ -178,7 +179,7 @@ function renderCounter() {
 };
 
 
-
+//Works
 function render() {
   renderTasks();
   renderCounter();
@@ -190,6 +191,7 @@ function render() {
 
 
 /*Event Functions: User Action*/
+//Works
 function handleTaskSubmit() {
   const form = document.querySelector("#taskForm");
     form.addEventListener("submit", (event) => {
@@ -218,11 +220,14 @@ function handleTaskSubmit() {
     }
     
     form.reset();
+    const error_mes = document.querySelector("#error_message") 
+    error_mes.innerHTML = ""
     addTask(task, category);
     render();
   });
 };
 
+//Works
 function handleClearTasks() {  
   const clr_btn = document.querySelector("#clear_button");
   clr_btn.addEventListener("click", () => {
@@ -231,22 +236,24 @@ function handleClearTasks() {
     });
 };
 
+//Works
 function handleTaskMark(event) {
   
   markTask(event);
   render();
 };
 
+//Works
 function handleTaskDelete(event) {  
 		deleteTask(event);
     render();
 };
 
 
-function handleCategory(event) {
+function handleCategory() {
   const category_button = document.querySelector("#category");
   const new_category = category_button.value
-  category_button.addEventListener("change", () => {
+  category_button.addEventListener("click", () => {
     CategoryChanger(new_category);
     render();
   });
