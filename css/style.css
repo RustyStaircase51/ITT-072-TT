@@ -1,0 +1,91 @@
+/*Root*/
+:root {
+	--bg1: #FFFAFA;
+	--txt1: #36364A;
+	--head1: #411900;
+	--txt2: red;
+
+}
+
+
+
+/*H1-H2*/
+h1
+{
+	font-size: 3rem;
+	color: var(--head1);
+	text-align: center;
+}
+/*Body*/
+body h2
+{
+	font-size: 2rem;
+	color: var(--head1);
+}
+
+body {
+	background-color: var(--bg1);
+	padding: 15px;
+	text-align: center;
+}
+
+/*Misc*/
+button {
+	font-size: 0.8rem;
+}
+
+p	
+{
+	font-size: 1.2rem;
+}
+li{
+	align-content: center;
+	list-style-position: inside;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+}
+button {
+	background-color: var(--head1);
+	color: var(--bg1);
+	
+}
+
+
+
+/*Ids*/
+#error_message {
+	color: var(--txt2);
+	margin-top: 2rem;
+	margin-bottom: 0rem;
+}
+#form h2{
+	margin-top: 2rem;
+}
+
+
+#task_list {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-size: 1.1rem;
+	margin-left: -20px;
+}
+
+#task_list button{
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+#task_list li{
+	margin-top: 10px;
+}
+
+
+
+#clearBtn{
+	margin-top: 10px;
+}
+
