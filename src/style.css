@@ -1,0 +1,93 @@
+/*Root*/
+:root {
+	--bg1: #272e2e;
+	--txt1: #FFFDF7;
+	--head1: #17b047;
+	--bg2: #1E2121;
+	--accent1: #8417B0;
+	--accent2: #E03616;
+	--accent3: #298C8C;
+}
+
+/*Classes*/
+
+	.container{
+		display: grid;
+		background-color: var(--bg1);
+		padding: 2rem 1rem;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+	}
+
+/*IDs*/
+	
+	#message {
+		text-align: center;
+		font-size: 2rem;
+		color: var(--accent2);
+	}
+	
+	#year {
+		font-size: 1.2rem;
+	}
+	
+	
+/*Miscellaneous*/
+	body
+	{
+		
+		font-size: 1rem;
+		color: var(--txt1);
+	}
+	main li {
+		list-style-type: none;
+	}
+	header
+	{
+		text-align: center;
+		font-size: 2rem;
+	}
+	
+	ul {
+		font-size: 1.2rem;
+	}
+	/*p element*/
+	p
+	{
+		font-size: 1.2rem;
+		
+	}
+	p a{
+		text-decoration: none;
+		color: var(--accent3);
+	}
+	p a:hover{
+		text-decoration: none;
+		color: var(--accent1);
+	}
+
+
+
+
+/*H1-H3*/
+	h1
+	{
+		font-size: 3rem;
+		color: var(--head1);
+	}
+
+	h2
+	{
+		font-size: 2rem;
+		color: var(--head1);
+	}
+
+/*Footer*/
+	footer
+	{
+		padding: 7px;
+		text-align: center;
+		font-size: 0.8rem;
+		background-color: var(--bg2);
+	}
