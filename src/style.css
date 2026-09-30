@@ -1,0 +1,123 @@
+/*Class*/
+	.Card {
+			border: 5px solid #8417B0;
+			text-align: center;
+			background-color: #1E2121;
+			padding: 7px;
+			display: grid;
+			grid-template-rows: 1fr 1fr 1fr;
+		}
+
+
+/*IDs*/
+	#Container{
+			display: grid;
+			background-color: #272e2e;
+			padding: 2rem 1rem;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+		}
+
+
+
+
+	/*NavBar*/
+	#NavBar {
+		display: flex;
+		align-items: center;
+		padding: 30px;
+		justify-content: space-between;
+		gap: 1rem;
+		background-color: #1E2121;
+	}
+
+	#NavBar a:hover {
+		color: #8417B0;
+	}
+	#NavBar a{
+		text-decoration: none;
+		color: #E03616;
+		font-size: 1.5rem;
+	}
+	/*Foot*/
+	#Foot p{
+	font-size: 0.8rem;
+	}
+
+	/*CardList1*/
+	#CardList {
+		align-items: center;
+		text-align: center;
+		padding: 30px;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	#CardList a:hover {
+		color: #0d5e1f;
+	}
+	#CardList a{
+		text-decoration: none;
+		color: rgb(244, 143, 20);
+		font-size: 1.5rem;
+	}
+
+
+/*Miscellaneous*/
+body
+{
+	font-size: 1rem;
+	color: #FFFDF7;
+}
+
+header
+{
+	text-align: center;
+	font-size: 2rem;
+}
+
+p
+{
+	font-size: 1.3rem;
+}
+
+
+/*H1-H4*/
+h1
+{
+	font-size: 3rem;
+	color: #17b047;
+}
+
+h2
+{
+	font-size: 2.5rem;
+	color: #17b047;
+	text-align: center;
+}
+
+h3
+{
+	padding-bottom: 0px;
+	align-content: center;
+	font-size: 2rem;
+	color: orange;
+	border:dashed darkslateblue;
+}
+
+h4 {
+	color: darkgoldenrod;
+	font-size: 2rem;
+	padding-bottom: 0px;
+}
+
+/*Footer*/
+footer
+{
+	padding: 7px;
+	text-align: center;
+	font-size: 0.8rem;
+	background-color: #1E2121;
+}
+
