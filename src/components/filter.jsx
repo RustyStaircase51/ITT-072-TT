@@ -1,4 +1,3 @@
-// filter.jsx
 // Sort by genre, name, status, or default order
 import { useState } from "react";
 

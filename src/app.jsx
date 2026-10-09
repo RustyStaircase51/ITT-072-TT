@@ -1,5 +1,3 @@
-// app.jsx
-
 import { useState } from "react";
 import HeadLoader from "./components/header.jsx";
 import FormLoader from "./components/form.jsx";

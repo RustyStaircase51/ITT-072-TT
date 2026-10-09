@@ -1,4 +1,3 @@
-// counter.jsx
 
 function CounterLoader({ count }) {
     return (

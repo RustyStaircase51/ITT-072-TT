@@ -1,4 +1,3 @@
-// form.jsx
 import { useState } from "react";
 import CardLoader from "./moviecard.jsx";
 

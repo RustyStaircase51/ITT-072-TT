@@ -1,4 +1,3 @@
-// moviecard.jsx
 import { useState } from "react";
 
 function CardLoader({ movie, onToggleWatched }) {
@@ -15,6 +14,7 @@ function CardLoader({ movie, onToggleWatched }) {
             </button>
             <br />
         </div>
+        
     );
 }
 

@@ -1,10 +1,10 @@
 /*Classes*/
 .watched {
-    color: green;
+    color: lightgreen;
 }
 
 .unwatched {
-    color: red;
+    color: lightcoral
 }
 
 
@@ -14,4 +14,132 @@
 
 
 /*Misc.*/
+
+/*Class*/
+	.Card {
+			border: 5px solid #2a2550;
+			text-align: center;
+			background-color: #9871c8;
+			padding: 7px;
+			display: grid;
+			grid-template-rows: 1fr 1fr 1fr;
+		}
+
+    .Card button{
+ font-size: 1.0rem;
+  color: #f3eef8;
+  background-color:#8ea4c4;
+    border: 3px solid #2a2550;
+    }
+
+/*IDs*/
+	#Container{
+			display: grid;
+			background-color: #cdc4dc;
+			padding: 2rem 1rem;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+      text-align: center;
+		}
+	/*Foot*/
+	#Foot p{
+	font-size: 0.8rem;
+	}
+#Filter {
+  font-size: 1.5rem;
+  color: #f3eef8;
+
+}
+#Filter button {
+  font-size: 1.2rem;
+  color: #f3eef8;
+  background-color:#8ea4c4;
+    border: 3px solid #2a2550;
+}
+#Filter select {
+  margin: 5px;
+  font-size: 1.2rem;
+  color: #f3eef8;
+  background-color:#8ea4c4;
+  border: 3px solid #2a2550;
+}
+
+
+#Form {
+  font-size: 1.5rem;
+  color: #f3eef8;
+
+}
+#Form button {
+  font-size: 1.0rem;
+  color: #f3eef8;
+  background-color:#8ea4c4;
+    border: 3px solid #2a2550;
+}
+#Form select {
+  margin: 5px;
+  font-size: 1.0rem;
+  color: #f3eef8;
+  background-color:#8ea4c4;
+  border: 3px solid #2a2550;
+}
+#Form input {
+  margin: 5px;
+  font-size: 1.0rem;
+  color: #f3eef8;
+  background-color:#8ea4c4;
+  border: 3px solid #2a2550;
+}
+  /*Miscellaneous*/
+body
+{
+	font-size: 1rem;
+	color: #FFFDF7;
+}
+
+header
+{
+	text-align: center;
+	font-size: 2rem;
+}
+
+p
+{
+	font-size: 1.3rem;
+}
+
+
+/*H1-H4*/
+h1
+{
+	font-size: 3rem;
+	color: #17b047;
+}
+
+h2
+{
+	font-size: 2.5rem;
+	color: #378DD4;
+	text-align: center;
+}
+
+h3
+{
+	padding-bottom: 0px;
+	align-content: center;
+	font-size: 2rem;
+	color: orange;
+	border:dashed darkslateblue;
+}
+
+/*Footer*/
+footer
+{
+	padding: 7px;
+	text-align: center;
+	font-size: 0.8rem;
+	background-color: #6e5a88;
+}
+
 
